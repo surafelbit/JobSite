@@ -11,3 +11,4 @@ Route::get('/ping', function () {
 //         'posts'=>[['title'=>"fanum"]]
 //     ]);
 // });
+//
