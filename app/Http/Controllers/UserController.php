@@ -9,6 +9,10 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     //
+    public function manage()
+    {
+        // Your logic here (for example, returning a view)
+return view('users.register');    }
     public function index(){
 
     }
