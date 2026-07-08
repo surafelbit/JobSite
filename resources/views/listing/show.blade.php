@@ -37,8 +37,12 @@
                     <a href="#">Vue</a>
                 </li>
             </ul> --}}
-            <div class="text-lg my-4">
-                <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
+            <div class="text-lg my-4 flex flex-wrap justify-center gap-3">
+                <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot"></i> {{$listing->location}}</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-briefcase"></i> {{$listing->job_type ?? 'Full-time'}}</span>
+                @if($listing->salary)
+                    <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-money-bill-wave"></i> {{$listing->salary}}</span>
+                @endif
             </div>
             <div class="border border-gray-200 w-full mb-6"></div>
             <div>

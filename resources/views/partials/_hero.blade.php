@@ -1,24 +1,16 @@
-<section
-class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4"
->
-<div
-    class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
-    style="background-image: url('images/laravel-logo.png')"
-></div>
-
-<div class="z-10">
-    <h1 class="text-6xl font-bold uppercase text-white">
-        Lara<span class="text-black">Gigs</span>
-    </h1>
-    <p class="text-2xl text-gray-200 font-bold my-4">
-        Find or post Laravel jobs & projects
-    </p>
-    <div>
-        <a
-            href="register.html"
-            class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
-            >Sign Up to List a Gig</a
-        >
+<section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#ef3b2d] via-[#d7362d] to-[#b8231d] px-6 py-16 text-center text-white shadow-xl mb-6">
+    <div class="absolute inset-0 opacity-20" style="background-image: url('images/laravel-logo.png'); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <p class="uppercase tracking-[0.35em] text-sm font-semibold text-red-100">Laravel Career Board</p>
+        <h1 class="text-5xl md:text-6xl font-black uppercase mt-3">
+            Lara<span class="text-black">Gigs</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-red-50 mt-4">
+            Discover exciting Laravel roles, freelance projects, and standout opportunities in one polished place.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+            <a href="/listing/create" class="inline-block rounded-full border-2 border-white px-5 py-3 font-semibold hover:bg-white hover:text-[#ef3b2d] transition">Post a New Opportunity</a>
+            <a href="/" class="inline-block rounded-full bg-black px-5 py-3 font-semibold hover:bg-gray-800 transition">Browse Open Roles</a>
+        </div>
     </div>
-</div>
 </section>

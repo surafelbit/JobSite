@@ -28,27 +28,28 @@
         </script>
         <title>LaraGigs | Find Laravel Jobs & Projects</title>
     </head>
-    <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
-            <a href="/"
-                ><img class="w-24" src="{{(asset('images/logo.png'))}}" alt="" class="logo"
-            /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
+    <body class="pb-32 bg-gray-50 text-gray-800">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 lg:px-8">
+            <a href="/" class="flex items-center gap-3">
+                <img class="w-24" src="{{asset('images/logo.png')}}" alt="LaraGigs logo" />
+                <span class="text-lg font-semibold text-gray-700">Laravel Jobs Board</span>
+            </a>
+            <ul class="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-700">
                 @auth
                 <li>
-                   <span>Welcome {{auth()->user()->name}}</span>
+                   <span class="text-gray-500">Welcome {{auth()->user()->name}}</span>
                 </li>
                 <li>
                     <a href="/listing/manage" class="hover:text-laravel"
                         ><i class="fa-solid fa-gear"></i>
-                        Manage Lists</a
+                        Manage</a
                     >
                 </li>
                 <li>
                     <form class="inline" method="POST" action="/logout">
                     @csrf
-                    <button type="submit">
-<i class="fa-solid fa-door-closed"></i>Logout
+                    <button type="submit" class="hover:text-laravel">
+<i class="fa-solid fa-door-closed"></i> Logout
                     </button>
                 </form>
                 </li>
@@ -67,21 +68,16 @@
                 @endauth
             </ul>
         </nav>
-        <main>
+        <main class="mx-auto max-w-7xl px-4 lg:px-8">
             {{-- @yield('content') --}}
 {{$slot}}
         </main>
-        <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"
-    >
-        <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
-
-        <a
-            href="/listing/create"
-            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
-            >Post Job</a
-        >
-    </footer>
+        <footer class="mt-16 border-t border-gray-200 bg-white py-6">
+            <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-sm text-gray-600 md:flex-row md:items-center md:justify-between lg:px-8">
+                <p>© 2026 LaraGigs. Built for modern Laravel hiring.</p>
+                <a href="/listing/create" class="inline-flex items-center rounded-full bg-laravel px-4 py-2 font-semibold text-white hover:bg-black">Post a Job</a>
+            </div>
+        </footer>
     <x-flash-message/>
 </body>
 </html>

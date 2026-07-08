@@ -10,10 +10,12 @@ class ListingController extends Controller
 {
     //
     public function index(){
-        // dd(request()->tag);
-        return view('listing.index',['heading'=>'latest Listings',
-        'lists'=>Listing::latest()->filter(request(['tag','search']))->paginate(5)]);
-        }
+        return view('listing.index', [
+            'heading' => 'Latest Listings',
+            'lists' => Listing::latest()->filter(request(['tag','search']))->paginate(5),
+            'featuredListings' => Listing::where('is_featured', true)->latest()->take(3)->get(),
+        ]);
+    }
     public function show(Listing $listing){
         return view('listing.show',['listing'=>$listing]);
 
@@ -27,6 +29,9 @@ class ListingController extends Controller
             'company'=>['required',Rule::unique('listings','company')],
             "title"=>"required",
             "location"=>"required",
+            "job_type"=>"nullable",
+            "salary"=>"nullable",
+            "is_featured"=>"nullable",
             "website"=>"required",
             "email"=>["required","email"],
             "tags"=>"required",
@@ -52,6 +57,9 @@ class ListingController extends Controller
             'company'=>['required'],
             "title"=>"required",
             "location"=>"required",
+            "job_type"=>"nullable",
+            "salary"=>"nullable",
+            "is_featured"=>"nullable",
             "website"=>"required",
             "email"=>["required","email"],
             "tags"=>"required",
